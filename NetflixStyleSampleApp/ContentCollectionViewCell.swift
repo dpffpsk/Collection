@@ -23,6 +23,8 @@ class ContentCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         
+        //Add New Constraints
+        //이미지뷰 크기에 맞춰서
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

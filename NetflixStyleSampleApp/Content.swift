@@ -9,9 +9,10 @@ import Foundation
 import UIKit
 
 //읽기 기능만 사용하기때문에 Decodable
+//(읽기,쓰기의 경우 Codable)
 struct Content: Decodable {
     let sectionType: SectionType
-    let sectonName: String
+    let sectionName: String
     let contentItem: [Item]
     
     enum SectionType: String, Decodable {

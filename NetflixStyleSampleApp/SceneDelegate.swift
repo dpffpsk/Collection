@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout() //CollectionView의 경우 해당 객체(FlowLayout)가 있어야만 생성
         let homeViewController = HomeViewController(collectionViewLayout: layout)
         let rootNavigationController = UINavigationController(rootViewController: homeViewController)
         

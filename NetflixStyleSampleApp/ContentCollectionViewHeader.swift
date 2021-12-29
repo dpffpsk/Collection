@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//UICollectionReusableView 타입의 경우에만 header, footer 생성 가능
 class ContentCollectionViewHeader: UICollectionReusableView {
     let sectionNameLabel = UILabel()
     
@@ -19,6 +20,9 @@ class ContentCollectionViewHeader: UICollectionReusableView {
         sectionNameLabel.sizeToFit()
         
         addSubview(sectionNameLabel)
+        
+        //Add New Constraints
+        //위, 아래, 왼쪽 10씩 간격
         sectionNameLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.top.bottom.leading.equalToSuperview().offset(10)
