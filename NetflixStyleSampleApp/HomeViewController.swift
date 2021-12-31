@@ -61,8 +61,6 @@ class HomeViewController: UICollectionViewController {
                 return self.createRankTypeSection()
             case .main:
                 return self.createMainTypeSection()
-            default:
-                return nil
             }
         }
     }
@@ -144,7 +142,7 @@ class HomeViewController: UICollectionViewController {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         //group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(450))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(450))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         //section
@@ -153,7 +151,6 @@ class HomeViewController: UICollectionViewController {
         
         return section
     }
-    
     
     //SectionHeader layout 설정
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
@@ -196,8 +193,6 @@ extension HomeViewController {
             cell.imageView.image = mainItem?.image
             cell.descriptionLabel.text = mainItem?.description
             return cell
-        default:
-            return UICollectionViewCell()
         }
     }
     
