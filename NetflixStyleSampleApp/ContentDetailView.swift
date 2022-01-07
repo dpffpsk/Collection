@@ -11,17 +11,24 @@ struct ContentDetailView: View {
     @State var item: Item? //Content.swift
     
     var body: some View {
-        VStack {
-            if let item = item { //item 있을 경우
-                Image(uiImage: item.image)
-                    .aspectRatio(contentMode: .fit)
-                Text(item.description)
-                    .font(.caption)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .padding()
-            } else { //item 없을 경우
-                Color.white
+        ZStack{
+            Color.black.edgesIgnoringSafeArea(.all)
+            ZStack(alignment: .bottom) {
+                if let item = item { //item 있을 경우
+                    Image(uiImage: item.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200)
+                    Text(item.description)
+                        .font(.caption)
+                        .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .foregroundColor(.primary)
+                        .background(Color.primary.colorInvert().opacity(0.75))
+                } else { //item 없을 경우
+                    Color.white
+                }
             }
         }
     }
